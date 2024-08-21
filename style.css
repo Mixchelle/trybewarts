@@ -1,0 +1,295 @@
+*{
+  margin: 0;
+}
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgb(50, 167, 145);
+
+}
+
+.trybewarts-header-logo{
+  width: 60px;
+  padding: 10px;
+}
+
+.trybewarts-login {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.trybewarts-login input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  outline: none;
+  font-size: 16px;
+  transition: border-color 0.3s;
+  width: 200px;
+}
+
+.trybewarts-login input:focus {
+  border-color: rgb(50, 167, 145);
+}
+
+.trybewarts-login button {
+  padding: 10px 20px;
+  background-color: purple;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin-top: -10px;
+}
+
+.trybewarts-login button:hover {
+  background-color: #551a8b;
+}
+
+#trybewarts-header-title{
+  text-align: center;
+  align-items: center;
+  margin-top: 15px;
+  color:beige
+}
+
+.evaluation-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  border-radius: 15px; 
+}
+
+#evaluation-form {
+  width: 675px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#evaluation-form input,
+#evaluation-form select {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #dcdcdc;
+  background: #ffffff;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+#evaluation-form input:focus,
+#evaluation-form select:focus {
+  border-color: #6a5acd; 
+  box-shadow: 0 0 8px rgba(106, 90, 205, 0.5); 
+}
+
+#evaluation-form button {
+  padding: 12px 20px;
+  background-color: #6a5acd; 
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#evaluation-form button:hover {
+  background-color: #4a3c7c; 
+  box-shadow: 0 0 8px rgba(106, 90, 205, 0.5); 
+}
+
+.logo-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+  margin-top: 80px;
+}
+
+.form-flex{
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#trybewarts-forms-logo {
+  height: 500px;
+}
+
+#fireworks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Estilo para os campos Nome e Sobrenome */
+.name-surname {
+  display: flex;
+  gap: 10px;
+}
+
+.name-surname input {
+  flex: 1;
+}
+
+/* Estilo para os campos Email e Casa */
+.email-house {
+  display: flex;
+  gap: 10px;
+}
+
+.email-house input {
+  flex: 2;
+}
+
+.email-house select {
+  flex: 1;
+}
+
+/* Estilo para os inputs do tipo radio e checkbox em linha */
+.family-selection, .subject-selection, .rating {
+  display: flex;
+  flex-wrap: wrap; /* Permite quebra de linha se necessário */
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.family-selection input[type="radio"], .subject-selection input[type="checkbox"], .rating input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Estilo para labels */
+.family-selection label, .subject-selection label, .rating label {
+  margin-right: 10px;
+}
+
+/* Estilo para a textarea */
+.textarea {
+  margin-top: 10px;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+}
+
+/* Estilo para o botão de enviar */
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.footer {
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+#counter-container {
+  margin-bottom: 1px;
+  text-align: right;
+}
+
+#counter {
+  font-weight: bold;
+}
+
+.letter {
+  display: none; /* Inicialmente escondido */
+  position: relative;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.envelope {
+  position: relative;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  animation: openLetter 2s forwards;
+}
+
+.letter-content {
+  opacity: 0;
+  animation: writeLetter 4s forwards;
+}
+
+/* Animação para abrir a carta */
+@keyframes openLetter {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Animação para o texto da carta */
+@keyframes writeLetter {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+.agreement-container {
+  display: flex;
+  align-items: center; /* Alinha verticalmente ao centro */
+}
+.agreement-container label {
+  margin-right: 10px; /* Espaço entre o label e o input */
+}
+
+#form-data-section {
+  display: none; /* Inicialmente oculto */
+  padding: 20px;
+}
+
+#form-data {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+#form-data p {
+  font-size: 16px;
+  margin: 10px 0;
+}
