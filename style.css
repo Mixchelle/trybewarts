@@ -1,6 +1,20 @@
-*{
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+/* Corpo e Layout Geral */
+body {
+  background-image: url('./images/image.jpg');
+  background-color: rgb(247, 247, 234);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  overflow: hidden; /* Evita rolagem causada pelo desfoque */
+}
+
 .header{
   display: flex;
   flex-direction: row;
@@ -62,12 +76,18 @@
 }
 
 .evaluation-form {
+  position: relative;
+  margin-top: 60px;
+  margin-bottom: 50px;
+  margin-left: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   border-radius: 15px; 
+  background: rgba(255, 255, 255, 0.7); 
+  color: rgb(58, 57, 57);
 }
 
 #evaluation-form {
@@ -86,6 +106,8 @@
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
   font-size: 16px;
   transition: box-shadow 0.3s, border-color 0.3s;
+   background: rgba(255, 255, 255, 0.4); 
+
 }
 
 #evaluation-form input:focus,
@@ -187,6 +209,22 @@
 textarea {
   width: 100%;
   height: 100px;
+  background: rgba(255, 255, 255, 0.4); 
+  color: rgb(58, 57, 57);
+}
+
+#house option {
+  background: rgba(255, 255, 255, 0.4); 
+  color: rgb(58, 57, 57); /* Texto branco */
+}
+
+#house {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.4); 
+  color: rgb(71, 70, 70); /* Texto branco */
 }
 
 /* Estilo para o botão de enviar */
@@ -480,7 +518,7 @@ padding: 20px;
   flex-direction: row-reverse;
   justify-content: left;
   font-size: 2rem;
-  color: #d3d3d3;
+  color: #fffcfc;
 }
 
 .rating input {
@@ -490,6 +528,8 @@ padding: 20px;
 .rating label {
   cursor: pointer;
   transition: color 0.2s ease;
+  margin: 0; 
+  padding: 0 0rem; 
 }
 
 .rating input:checked ~ label {
