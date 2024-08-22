@@ -6,29 +6,32 @@
   <title>Trybewarts</title>
   <link rel="icon" href="/images/trybewarts-header-logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 </head>
 <body>
   
   <header class="header">
-    <img class="trybewarts-header-logo" src="images/trybewarts-header-logo.svg" alt="logo trybeWarts">
+    <img id="trybewarts-header-logo" class="trybewarts-header-logo" src="images/trybewarts-header-logo.svg" alt="Trybewarts logo">
     <h1 id="trybewarts-header-title">Trybewarts</h1>
     <form class="trybewarts-login" id="login-form">
       <input type="email" name="email" placeholder="Email" required>
-      <input type="password" name="password" placeholder="Senha" required>
-      <button type="submit">Entrar</button>
+      <input type="password" name="password" placeholder="Password" required>
+      <button type="submit">Log In</button>
     </form>
   </header>
 
-  <section class="form-flex">
+  <section id="background" class="form-flex">
     <main class="evaluation-form">
       <form id="evaluation-form">
         <div class="name-surname">
-          <input type="text" id="input-name" name="nome" placeholder="Nome" required>
-          <input type="text" id="input-lastname" name="sobrenome" placeholder="Sobrenome" required>
+          <input type="text" id="input-name" name="first_name" placeholder="First Name" required>
+          <input type="text" id="input-lastname" name="last_name" placeholder="Last Name" required>
         </div>
         <div class="email-house">
           <input type="email" id="input-email" name="email" placeholder="Email" required>
           <select id="house" name="house">
+            <option value="" selected disabled>Select a house</option>
             <option id="gitnoria-house" value="Gitnória">Gitnória</option>
             <option id="reactpuff-house" value="Reactpuff">Reactpuff</option>
             <option id="corvinode-house" value="Corvinode">Corvinode</option>
@@ -36,7 +39,7 @@
           </select>
         </div>
         <hr>
-        <label id="label-family">Qual sua família?</label>
+        <label id="label-family">Which family do you belong to?</label>
         <div class="family-selection">
           <input type="radio" id="frontend" name="family" value="Frontend">
           <label for="frontend">Frontend</label>
@@ -46,7 +49,7 @@
           <label for="fullstack">FullStack</label>
         </div>
         <hr>
-        <label id="label-content">Qual conteúdo você está com mais vontade de aprender?</label>
+        <label id="label-content">What content are you most eager to learn?</label>
         <div class="subject-selection">
           <input type="checkbox" class="subject" id="hoFs" value="HoFs">
           <label for="hoFs">HoFs</label>
@@ -62,66 +65,86 @@
           <label for="python">Python</label>
         </div>
         <hr>
-        <label id="label-rate">Como você avalia a Trybewarts?</label>
+        <label id="label-rate">How would you rate Trybewarts?</label>
         <div class="rating">
-          <input type="radio" id="rate1" name="rate" value="1">
-          <label for="rate1">1</label>
-          <input type="radio" id="rate2" name="rate" value="2">
-          <label for="rate2">2</label>
-          <input type="radio" id="rate3" name="rate" value="3">
-          <label for="rate3">3</label>
-          <input type="radio" id="rate4" name="rate" value="4">
-          <label for="rate4">4</label>
-          <input type="radio" id="rate5" name="rate" value="5">
-          <label for="rate5">5</label>
-          <input type="radio" id="rate6" name="rate" value="6">
-          <label for="rate6">6</label>
-          <input type="radio" id="rate7" name="rate" value="7">
-          <label for="rate7">7</label>
-          <input type="radio" id="rate8" name="rate" value="8">
-          <label for="rate8">8</label>
-          <input type="radio" id="rate9" name="rate" value="9">
-          <label for="rate9">9</label>
-          <input type="radio" id="rate10" name="rate" value="10">
-          <label for="rate10">10</label>
+          <input type="radio" id="rate1" name="rate" value="5" aria-label="1">
+          <label for="rate1" class="star">&#9733;</label>
+          <input type="radio" id="rate2" name="rate" value="4" aria-label="2">
+          <label for="rate2" class="star">&#9733;</label>
+          <input type="radio" id="rate3" name="rate" value="3" aria-label="3">
+          <label for="rate3" class="star">&#9733;</label>
+          <input type="radio" id="rate4" name="rate" value="2" aria-label="4">
+          <label for="rate4" class="star">&#9733;</label>
+          <input type="radio" id="rate5" name="rate" value="1" aria-label="5">
+          <label for="rate5" class="star">&#9733;</label>
         </div>
         <hr>
-        <label class="textarea">Deixe seu comentário:</label>
+        <label class="textarea">Leave your comments:</label>
         <textarea id="textarea" maxlength="500"></textarea>
         <div id="counter-container">
-          <span id="counter">500</span> caracteres restantes
+          <span id="counter">500</span> characters remaining
         </div>
         <hr>
         <div class="agreement-container">
-          <label id="label-infos" for="agreement">Você concorda com o uso das informações acima?</label>
+          <label id="label-infos" for="agreement">Do you agree to the use of the above information?</label>
           <input type="checkbox" id="agreement" required>
         </div>
 
         <hr>
-        <button type="submit" id="submit-btn">Enviar</button>
+        <button type="submit" id="submit-btn">Submit</button>
       </form>
+      <div id="form-data">
+        <div class="card">
+          <div class="card__img">
+            <img id="house-image" src="" alt="">
+          </div>      
+          <div class="card__avatar">
+            <img src="images/avatar.jpg" alt="Avatar">
+          </div>
+       <!-- <div class="card__avatar"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><circle cx="64" cy="64" fill="#ff8475" r="60"></circle><circle cx="64" cy="64" fill="#f85565" opacity=".4" r="48"></circle><path d="m64 14a32 32 0 0 1 32 32v41a6 6 0 0 1 -6 6h-52a6 6 0 0 1 -6-6v-41a32 32 0 0 1 32-32z" fill="#7f3838"></path><path d="m62.73 22h2.54a23.73 23.73 0 0 1 23.73 23.73v42.82a4.45 4.45 0 0 1 -4.45 4.45h-41.1a4.45 4.45 0 0 1 -4.45-4.45v-42.82a23.73 23.73 0 0 1 23.73-23.73z" fill="#393c54" opacity=".4"></path><circle cx="89" cy="65" fill="#fbc0aa" r="7"></circle><path d="m64 124a59.67 59.67 0 0 0 34.69-11.06l-3.32-9.3a10 10 0 0 0 -9.37-6.64h-43.95a10 10 0 0 0 -9.42 6.64l-3.32 9.3a59.67 59.67 0 0 0 34.69 11.06z" fill="#4bc190"></path><path d="m45 110 5.55 2.92-2.55 8.92a60.14 60.14 0 0 0 9 1.74v-27.08l-12.38 10.25a2 2 0 0 0 .38 3.25z" fill="#356cb6" opacity=".3"></path><path d="m71 96.5v27.09a60.14 60.14 0 0 0 9-1.74l-2.54-8.93 5.54-2.92a2 2 0 0 0 .41-3.25z" fill="#356cb6" opacity=".3"></path><path d="m57 123.68a58.54 58.54 0 0 0 14 0v-25.68h-14z" fill="#fff"></path><path d="m64 88.75v9.75" fill="none" stroke="#fbc0aa" stroke-linecap="round" stroke-linejoin="round" stroke-width="14"></path><circle cx="39" cy="65" fill="#fbc0aa" r="7"></circle><path d="m64 91a25 25 0 0 1 -25-25v-16.48a25 25 0 1 1 50 0v16.48a25 25 0 0 1 -25 25z" fill="#ffd8c9"></path><path d="m91.49 51.12v-4.72c0-14.95-11.71-27.61-26.66-28a27.51 27.51 0 0 0 -28.32 27.42v5.33a2 2 0 0 0 2 2h6.81a8 8 0 0 0 6.5-3.33l4.94-6.88a18.45 18.45 0 0 1 1.37 1.63 22.84 22.84 0 0 0 17.87 8.58h13.45a2 2 0 0 0 2.04-2.03z" fill="#bc5b57"></path><path d="m62.76 36.94c4.24 8.74 10.71 10.21 16.09 10.21h5" style="fill:none;stroke-linecap:round;stroke:#fff;stroke-miterlimit:10;stroke-width:2;opacity:.1"></path><path d="m71 35c2.52 5.22 6.39 6.09 9.6 6.09h3" style="fill:none;stroke-linecap:round;stroke:#fff;stroke-miterlimit:10;stroke-width:2;opacity:.1"></path><circle cx="76" cy="62.28" fill="#515570" r="3"></circle><circle cx="52" cy="62.28" fill="#515570" r="3"></circle><ellipse cx="50.42" cy="69.67" fill="#f85565" opacity=".1" rx="4.58" ry="2.98"></ellipse><ellipse cx="77.58" cy="69.67" fill="#f85565" opacity=".1" rx="4.58" ry="2.98"></ellipse><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m64 67v4" stroke="#fbc0aa" stroke-width="4"></path><path d="m55 56h-9.25" opacity=".2" stroke="#515570" stroke-width="2"></path><path d="m82 56h-9.25" opacity=".2" stroke="#515570" stroke-width="2"></path></g><path d="m64 84c5 0 7-3 7-3h-14s2 3 7 3z" fill="#f85565" opacity=".4"></path><path d="m65.07 78.93-.55.55a.73.73 0 0 1 -1 0l-.55-.55c-1.14-1.14-2.93-.93-4.27.47l-1.7 1.6h14l-1.66-1.6c-1.34-1.4-3.13-1.61-4.27-.47z" fill="#f85565"></path></svg></div> -->
+          <div class="card__title" id="form-name"> <span id="name-value"></span></div>
+          <div class="card__subtitle" id="form-house">Casa: <span id="house-value"></span></div>
+          <div class="card__info">
+              <div  class="card__subtitles"id="form-email">Email: <span id="email-value"></span></div>
+              <div class="card__subtitles"id="form-family">Família: <span id="family-value"></span></div>
+              <div class="card__subtitles"id="form-subjects">Matérias: <span id="subjects-value"></span></div>
+              <div class="card__subtitles" id="form-rating">Avaliação: <span id="rating-value"></span></div>
+              <div  class="card__subtitles"id="form-comments">Comentários: <span id="comments-value"></span></div>
+              <div class="card__socials">
+                <a href="https://facebook.com" target="_blank" class="social-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+            </div>
+        
+        </div>
+        <!-- <p id="form-name"></p>
+        <p id="form-email"></p>
+        <p id="form-house"></p>
+        <p id="form-family"></p>
+        <p id="form-subjects"></p>
+        <p id="form-rating"></p>
+        <p id="form-comments"></p> -->
+      </div>
     </main>
     <div class="logo-container">
       <img id="trybewarts-forms-logo" src="images/trybewarts-colored.svg" alt="Trybewarts Logo">
     </div>
   </section>
-  <section class="form-flex" id="form-data-section" style="display: none;">
-    <div id="form-data">
-      <p id="form-name"></p>
-      <p id="form-email"></p>
-      <p id="form-house"></p>
-      <p id="form-family"></p>
-      <p id="form-subjects"></p>
-      <p id="form-rating"></p>
-      <p id="form-comments"></p>
-    </div>
-    <div class="logo-container">
-      <img id="trybewarts-forms-logo" src="images/trybewarts-colored.svg" alt="Trybewarts Logo">
-    </div>
-  </section>
+
+
 
   <footer class="footer">
-    <p>Direitos reservados @trybewarts 2024</p>
+    <p>All rights reserved @trybewarts 2024</p>
   </footer>
 
   <script src="script.js"></script>

@@ -274,22 +274,282 @@ button:disabled {
   margin-right: 10px; /* Espaço entre o label e o input */
 }
 
-#form-data-section {
-  display: none; /* Inicialmente oculto */
+
+/* Estilos gerais para o card */
+#form-data {
+  display: none;
   padding: 20px;
+  margin: 20px auto;
+  width: 275px;
+  background-color:transparent;
+  height: 80%;
+  border: none; /* Remove a borda */
+  border-radius: 10px;
+  font-family: 'Garamond', serif; /* Fonte que remete a um estilo mais clássico */
 }
 
-#form-data {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 0 auto;
-  max-width: 600px;
-}
 
 #form-data p {
-  font-size: 16px;
+  font-size: 18px;
+  color: #1a0e02; /* Cor de texto marrom escuro para combinar com o fundo */
   margin: 10px 0;
+}
+
+#form-data h1 {
+  font-size: 24px;
+  color: #d4af37; /* Cor dourada para os títulos */
+  border-bottom: 2px solid #8a6d3b; /* Linha dourada embaixo do título */
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+
+
+
+
+
+.Gitnória {
+  background-image: url('./images/Gitnória.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+.Reactpuff {
+  background-image: url('./images/Reactpuff.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+.Corvinode {
+  background-image: url('./images/Corvinode.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+.Pytherina {
+  background-image: url('./images/Pytherina.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+#background {
+  position: fixed; /* Fixa o fundo na tela */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Largura total da viewport */
+  height: 100vh; /* Altura total da viewport */
+  z-index: -1; /* Coloca o fundo atrás de outros conteúdos */
+}
+
+
+#back-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Cor de fundo verde */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#back-btn:hover {
+  background-color: #45a049; /* Cor de fundo verde mais escuro ao passar o mouse */
+}
+
+
+
+
+
+/* From Uiverse.io by andrew-demchenk0 */ 
+.card {
+  margin-top: 80px;
+  --main-color: #000;
+  --submain-color: #78858F;
+  --bg-color: #fff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  position: relative;
+  width: 300px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  background: var(--bg-color);
+}
+
+.card__img {
+  height: 122px;
+  width: 100%;
+}
+
+#house-image{
+width: 300px;
+height: 130%;
+border-radius: 20px 20px 0 0;
+}
+
+.card__img svg {
+  height: 100%;
+  border-radius: 20px 20px 0 0;
+}
+
+.card__avatar {
+  position: relative;
+  width: 114px;
+  height: 114px;
+  background: rgb(1, 37, 7); /* Mantém o fundo transparente */
+  clip-path: circle(104px at center);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: calc(50% - 57px);
+}
+
+.card__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  border-radius: 50%; 
+}
+
+.card__avatar svg {
+  width: 100px;
+  height: 100px;
+}
+
+.card__title {
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--main-color);
+  text-align: center;
+}
+
+.card__subtitle {
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--submain-color);
+}
+
+.card__subtitles {
+  margin-top: 1px;
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--submain-color);
+}
+.card__btn {
+  margin-top: 15px;
+  width: 76px;
+  height: 31px;
+  border: 2px solid var(--main-color);
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 11px;
+  color: var(--main-color);
+  background: var(--bg-color);
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+.card__btn-solid {
+  background: var(--main-color);
+  color: var(--bg-color);
+}
+
+.card__btn:hover {
+  background: var(--main-color);
+  color: var(--bg-color);
+}
+
+.card__btn-solid:hover {
+  background: var(--bg-color);
+  color: var(--main-color);
+}
+
+.card__info {
+padding: 20px;
+}
+
+
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: left;
+  font-size: 2rem;
+  color: #d3d3d3;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.rating input:checked ~ label {
+  color: #f5c518; /* Cor das estrelas preenchidas */
+}
+
+.rating label:hover,
+.rating label:hover ~ label {
+  color: #f5c518; /* Cor das estrelas ao passar o mouse */
+}
+
+.rating input:checked ~ input:checked ~ label {
+  color: #f5c518; /* Cor das estrelas à esquerda */
+}
+
+
+.card__socials {
+  display: flex;
+  justify-content: center; /* Centers the icons horizontally */
+  align-items: center; /* Centers the icons vertically */
+  gap: 20px; /* Adds space between the icons */
+  margin: 20px 0; /* Adds some margin above and below the icons */
+}
+
+.social-icon {
+  text-decoration: none; 
+  color: #333; 
+  font-size: 1rem; 
+  transition: color 0.3s ease; 
+}
+
+.social-icon:hover {
+  color: #0077b5; 
+}
+
+
+
+.house-corvinode svg rect {
+  fill: url(#a-corvinode); /* Gradiente específico para Corvinode */
+}
+.house-gitnoria svg rect {
+  fill: url(#a-gitnoria); /* Gradiente específico para Gitnória */
+}
+.house-pytherina svg rect {
+  fill: url(#a-pytherina); /* Gradiente específico para Pytherina */
+}
+.house-reactpuff svg rect {
+  fill: url(#a-reactpuff); /* Gradiente específico para Reactpuff */
+}
+
+/* Definições de gradientes específicos para cada casa */
+.house-corvinode #a-corvinode {
+  stop-color: #FF5722; /* Exemplo de cor */
+}
+.house-gitnoria #a-gitnoria {
+  stop-color: #4CAF50; /* Exemplo de cor */
+}
+.house-pytherina #a-pytherina {
+  stop-color: #2196F3; /* Exemplo de cor */
+}
+.house-reactpuff #a-reactpuff {
+  stop-color: #9C27B0; /* Exemplo de cor */
 }
